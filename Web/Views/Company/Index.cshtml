@@ -1,0 +1,38 @@
+﻿@using Web.Models
+@model List<Company>
+<form asp-controller="Company" asp-action="Create" method="post">
+    <input type="text" name="Name" id="Name" />
+    <input type="checkbox" name="IsInternal" id="IsInternal" />
+    <input type="hidden" value="false" name="IsInternal" id="IsInternal" />
+    <input type="text" name="Note" id="Note" />
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<hr />
+@if (Model.Count == 0){
+    <h2>Nothing to see here, move along</h2>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Is Internal</td>
+                <td>Note</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.InternalFlag</td>
+                    <td>@item.Note</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

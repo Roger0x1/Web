@@ -1,0 +1,184 @@
+﻿@model Web.Models.Employee
+
+<form asp-controller="Employee" asp-action="Create" method="post">
+    <div class="row">
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.FirstName" class="form-control" />
+            <label class="form-label" asp-for="@Model.FirstName"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.MiddleName" class="form-control" />
+            <label class="form-label" asp-for="@Model.MiddleName"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.LastName" class="form-control" />
+            <label class="form-label" asp-for="@Model.LastName"></label>
+        </div>
+        <div class="form-outline m-1 col-1">
+            <input type="text" asp-for="@Model.Suffix" class="form-control" />
+            <label class="form-label" asp-for="@Model.Suffix"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.OtherName" class="form-control" />
+            <label class="form-label" asp-for="@Model.OtherName"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.Phone" class="form-control" />
+            <label class="form-label" asp-for="@Model.Phone"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.SSN" class="form-control" />
+            <label class="form-label" asp-for="@Model.SSN"></label>
+        </div>
+        <div class="form-check m-1 col-2">
+            <input class="form-check-input" type="checkbox" asp-for="@Model.HasSSCard" />
+            <label class="form-check-label" asp-for="@Model.HasSSCard"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.HairColor" class="form-control" />
+            <label class="form-label" asp-for="@Model.HairColor"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.EyeColor" class="form-control" />
+            <label class="form-label" asp-for="@Model.EyeColor"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.Height" class="form-control" />
+            <label class="form-label" asp-for="@Model.Height"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.Weight" class="form-control" />
+            <label class="form-label" asp-for="@Model.Weight"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-outline datepicker m-1 col-2" data-mdb-inline="true" data-mdb-format="mmm dd, yyyy">
+            <input type="text" asp-for="@Model.DateOfBirth" class="form-control" />
+            <label class="form-label" asp-for="@Model.DateOfBirth"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.Birthplace" class="form-control" />
+            <label class="form-label" asp-for="@Model.Birthplace"></label>
+        </div>
+        <div class="m-1 col-auto">
+            <select class="select" asp-for="@Model.Gender" asp-items="@ViewBag.genderDropdown"></select>
+            <label class="form-label select-label">Gender</label>
+        </div>
+        <div class="m-1 col-auto">
+            <select class="select" asp-for="@Model.Race" asp-items="@ViewBag.raceDropdown"></select>
+            <label class="form-label select-label">Race</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="m-1 col-3">
+            <select class="select" asp-for="@Model.DriversLicenseState" asp-items="@ViewBag.stateDropdown"></select>
+            <label class="form-label select-label">Drivers License State</label>
+        </div>
+        <div class="form-outline datepicker m-1 col-2" data-mdb-inline="true" data-mdb-format="mmm dd, yyyy">
+            <input type="text" asp-for="@Model.DriversLicenseExpiration" class="form-control" />
+            <label class="form-label" asp-for="@Model.DriversLicenseExpiration"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.CitizenshipStatus" class="form-control" />
+            <label class="form-label" asp-for="@Model.CitizenshipStatus"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.CountyCitizenship" class="form-control" />
+            <label class="form-label" asp-for="@Model.CountyCitizenship"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.PassportNumber" class="form-control" />
+            <label class="form-label" asp-for="@Model.PassportNumber"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-outline datepicker m-1 col-2" data-mdb-inline="true" data-mdb-format="mmm dd, yyyy">
+            <input type="text" asp-for="@Model.HireDate" class="form-control" />
+            <label class="form-label" asp-for="@Model.HireDate"></label>
+        </div>
+        <div class="m-1 col-auto">
+            <select class="select" asp-for="@Model.HireSource" asp-items="@ViewBag.hireSourceDropdown"></select>
+            <label class="form-label select-label">Hire Source</label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.Number" class="form-control" />
+            <label class="form-label" asp-for="@Model.Number"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-outline m-1 col-7">
+            <input type="text" asp-for="@Model.Note" class="form-control" />
+            <label class="form-label" asp-for="@Model.Note"></label>
+        </div>
+    </div>
+    <hr />
+    <h4>Home Address</h4>
+    <div class="row">
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.HomeAddress.Street" class="form-control" />
+            <label class="form-label" asp-for="@Model.HomeAddress.Street"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.HomeAddress.City" class="form-control" />
+            <label class="form-label" asp-for="@Model.HomeAddress.City"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.HomeAddress.State" class="form-control" />
+            <label class="form-label" asp-for="@Model.HomeAddress.State"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.HomeAddress.ZipCode" class="form-control" />
+            <label class="form-label" asp-for="@Model.HomeAddress.ZipCode"></label>
+        </div>
+    </div>
+    <hr />
+    <h4><span>Mailing Address <button class="btn btn-sm btn-outline-info" type="button" id="same" name="same">Same as home</button></span></h4>
+    <div class="row">
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.MailingAddress.Street" class="form-control" />
+            <label class="form-label" asp-for="@Model.MailingAddress.Street"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.MailingAddress.City" class="form-control" />
+            <label class="form-label" asp-for="@Model.MailingAddress.City"></label>
+        </div>
+        <div class="form-outline m-1 col-2">
+            <input type="text" asp-for="@Model.MailingAddress.State" class="form-control" />
+            <label class="form-label" asp-for="@Model.MailingAddress.State"></label>
+        </div>
+        <div class="form-outline m-1 col-3">
+            <input type="text" asp-for="@Model.MailingAddress.ZipCode" class="form-control" />
+            <label class="form-label" asp-for="@Model.MailingAddress.ZipCode"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-10">
+            <button type="submit" value="submit" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script type="text/javascript">
+        $('#same').click(function () {
+            $('#MailingAddress_Street').val($("#HomeAddress_Street").val());
+            $('#MailingAddress_City').val($("#HomeAddress_City").val());
+            $('#MailingAddress_State').val($("#HomeAddress_State").val());
+            $('#MailingAddress_ZipCode').val($("#HomeAddress_ZipCode").val());
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"
+            integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA="
+            crossorigin="anonymous">
+    </script>
+
+    <script type="text/javascript">
+        $('input[name="SSN"]').mask("000-00-0000");
+        $('input[name="Phone').mask("(000)000-0000");
+    </script>
+}
